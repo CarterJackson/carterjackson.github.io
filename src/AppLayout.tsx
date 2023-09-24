@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import Header from './views/header/Header'
+import { Header } from './views/header'
 
 function AppLayout() {
 	return (

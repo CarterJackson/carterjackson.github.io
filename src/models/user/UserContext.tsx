@@ -25,6 +25,8 @@ export function UserProvider({ username, name, children }: ProviderProps) {
 		avatarUrl: 'https://avatars.githubusercontent.com/u/15017257?v=4',
 	};
 
+	// TODO: Fetch GitHub user
+
 	return (
 		<UserContext.Provider value={user}>
 			{children}

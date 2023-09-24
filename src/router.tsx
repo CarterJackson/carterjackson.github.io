@@ -1,4 +1,5 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
+import aboutRoutes from './views/about/routes';
 import AppLayout from './AppLayout';
 
 export const router = createBrowserRouter(
@@ -7,9 +8,9 @@ export const router = createBrowserRouter(
 			path: '/',
 			element: <AppLayout />,
 			children: [
-				// ...aboutRoutes,
 				// ...projectRoutes,
-				// { path: '/', element: <Navigate to="/projects" /> },
+				...aboutRoutes,
+				{ path: '/', element: <Navigate to="/about" /> },
 			],
 		},
 	]

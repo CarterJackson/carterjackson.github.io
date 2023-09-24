@@ -1,7 +1,7 @@
 import { useUser } from "../../models/user";
-import { Avatar } from "./Avatar";
+import Avatar from "./Avatar";
 
-function Header() {
+export function Header() {
 	const { name, avatarUrl } = useUser();
 
 	let profileLinkContent = <div>{name}</div>;
@@ -10,11 +10,9 @@ function Header() {
 	}
 
 	return (
-		<div className="flex justify-between h-12">
-			<a className="flex mx-1 mt-1">{profileLinkContent}</a>
-			<div>right header</div>
+		<div className="flex justify-between h-12 mb-2 p-1">
+			<a className="flex">{profileLinkContent}</a>
+			<div>TODO: nav</div>
 		</div>
 	)
 }
-
-export default Header;
