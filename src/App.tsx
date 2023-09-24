@@ -1,15 +1,18 @@
 import reactLogo from './assets/react.svg'
 import './App.css'
-import Header from './views/Header'
+import Header from './views/header/Header'
+import { UserProvider } from './models/user'
 
 function App() {
 	return (
 		<>
-			<Header />
-			<h1>Hello World</h1>
-			<div className="flex justify-center">
-				<img src={reactLogo} className="logo react" alt="React logo" />
-			</div>
+			<UserProvider username="CarterJackson" name="Carter Jackson">
+				<Header />
+				<div className="flex justify-center">
+					<h1>Hello World</h1>
+					<img src={reactLogo} className="logo react ml-4" alt="React logo" />
+				</div>
+			</UserProvider>
 		</>
 	)
 }
