@@ -1,10 +1,16 @@
 interface Props {
 	src: string;
+	width?: string;
 }
 
-function Avatar({ src }: Props) {
+function Avatar({ src, width }: Props) {
 	return (
-		<img className="rounded-full" src={src} alt="Avatar"></img>
+		<img
+			className="rounded-full"
+			src={src}
+			alt="Avatar"
+			width={width}
+		></img>
 	);
 }
 
