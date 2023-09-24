@@ -1,17 +1,12 @@
-import reactLogo from './assets/react.svg'
-import './App.css'
-import Header from './views/header/Header'
+import { RouterProvider } from 'react-router-dom';
 import { UserProvider } from './models/user'
+import { router } from './router';
 
 function App() {
 	return (
 		<>
 			<UserProvider username="CarterJackson" name="Carter Jackson">
-				<Header />
-				<div className="flex justify-center">
-					<h1>Hello World</h1>
-					<img src={reactLogo} className="logo react ml-4" alt="React logo" />
-				</div>
+				<RouterProvider router={router} />
 			</UserProvider>
 		</>
 	)

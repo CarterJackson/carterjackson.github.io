@@ -22,6 +22,7 @@ export function UserProvider({ username, name, children }: ProviderProps) {
 	const user: GithubUser = {
 		username: username,
 		name: name,
+		avatarUrl: 'https://avatars.githubusercontent.com/u/15017257?v=4',
 	};
 
 	return (
