@@ -12,8 +12,8 @@ export function Header() {
 	}
 
 	return (
-		<div className="flex justify-between h-14 py-1 px-4 bg-gray-700">
-			<Link to="about" className="flex items-center">{profileLinkContent}</Link>
+		<div className="flex items-center justify-between h-14 py-1 px-4 bg-gray-700">
+			<Link to="about" className="flex">{profileLinkContent}</Link>
 			<div>TODO: nav</div>
 		</div>
 	)
