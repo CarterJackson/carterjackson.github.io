@@ -5,7 +5,7 @@ function AppLayout() {
 	return (
 		<div className="h-screen w-screen">
 			<Header />
-			<div className="relative">
+			<div className="relative p-4">
 				<Outlet />
 			</div>
 		</div>
