@@ -7,9 +7,5 @@ export function useUser() {
 		throw new Error('useUser called outside UserProvider');
 	}
 
-	if (user && !user.id) {
-		console.warn('GitHub user could not be retrieved. The rate limit may have been reached.')
-	}
-
 	return user;
 }

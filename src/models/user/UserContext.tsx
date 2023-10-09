@@ -1,6 +1,6 @@
-import { createContext } from 'react';
+import { createContext, useState, useCallback } from 'react';
 
-export interface GithubUser {
+interface GithubUser {
 	username: string;
 	name: string;
 
@@ -10,7 +10,11 @@ export interface GithubUser {
 	bio?: string;
 }
 
-export const UserContext = createContext<GithubUser | undefined>(undefined);
+interface UserCtx extends GithubUser {
+	fetchUser: () => void;
+}
+
+export const UserContext = createContext<UserCtx | undefined>(undefined);
 
 interface ProviderProps {
 	username: string;
@@ -19,15 +23,24 @@ interface ProviderProps {
 }
 
 export function UserProvider({ username, name, children }: ProviderProps) {
-	const user: GithubUser = {
+	const [githubUser, setGithubUser] = useState<GithubUser>({
 		username: username,
 		name: name,
-	};
+	});
 
-	// TODO: Fetch GitHub user
+	const fetchUser = useCallback(() => {
+		try {
+			fetch(`https://github.com/${githubUser.username}`).then(resp => {
+				console.log(resp);
+				// TODO: Solve CORS and store resp
+			})
+		} catch {
+			console.warn('GitHub user could not be retrieved. The rate limit may have been reached.')
+		}
+	}, [githubUser])
 
 	return (
-		<UserContext.Provider value={user}>
+		<UserContext.Provider value={{...githubUser, fetchUser}}>
 			{children}
 		</UserContext.Provider>
 	)
