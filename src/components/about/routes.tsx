@@ -1,5 +1,5 @@
 import { type RouteObject } from 'react-router-dom';
-import { About } from './About';
+import About from '@/components/about/About';
 
 const routes: RouteObject[] = [
 	{

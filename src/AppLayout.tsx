@@ -1,9 +1,8 @@
-import { Outlet } from 'react-router-dom';
-import { Link } from "react-router-dom";
+import { Outlet, Link } from 'react-router-dom';
 
 export default function AppLayout() {
 	return (
-		<div className="h-screen w-screen flex flex-col items-center">
+		<div className="min-h-screen w-screen flex flex-col items-center">
 			<Header />
 			<Body />
 		</div>
@@ -27,8 +26,8 @@ function Header() {
 
 function Body() {
 	return (
-		<div className="relative h-full w-full bg-neutral-900 flex justify-center">
-			<div className="p-4 max-w-6xl w-full">
+		<div className="relative h-full w-full bg-neutral-900 flex justify-center flex-grow">
+			<div className="px-4 py-10 max-w-6xl w-full">
 				<Outlet />
 			</div>
 		</div>
