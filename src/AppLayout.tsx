@@ -14,6 +14,7 @@ function Header() {
 		<div className="h-14 py-1 px-4 bg-neutral-800 w-full flex justify-center">
 			<div className="h-full flex items-center justify-between max-w-6xl w-full">
 				<Link to="about" className="flex text-2xl text-gray-100 hover:text-gray-400">Carter Jackson</Link>
+				<span className="uppercase text-gray-400">This site is a work in progress</span>
 				<div className="[&>*]:ml-8 text-xl">
 					<Link to="about">About</Link>
 					<Link to="projects">Projects</Link>
